@@ -7,7 +7,7 @@ export const UserRegister = () => {
 
   return (
     <>
-      <h1>Formulaire d'inscription</h1>
+      <h1 className="black">Formulaire d'inscription</h1>
       <div className="container">
         <ShowForm formData={formData} setFormData={setFormData} />
         <UserCard formData={formData} />
