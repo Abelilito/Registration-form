@@ -52,6 +52,7 @@ export const ShowForm = ({ formData, setFormData }) => {
       placeholder: "Nom",
       borderError: borderError(formik.errors.name, formik.touched.name),
       value: formik.values.name,
+      autoComplete: "given-name",
       msgError: showErrorsMsg(formik.touched.name, formik.errors.name),
     },
     {
@@ -73,6 +74,7 @@ export const ShowForm = ({ formData, setFormData }) => {
       placeholder: "Email",
       borderError: borderError(formik.errors.email, formik.touched.email),
       value: formik.values.email,
+      autoComplete: "off",
       msgError: showErrorsMsg(formik.touched.email, formik.errors.email),
     },
     {
@@ -81,6 +83,7 @@ export const ShowForm = ({ formData, setFormData }) => {
       placeholder: "Mot de passe",
       borderError: borderError(formik.errors.password, formik.touched.password),
       value: formik.values.password,
+      autoComplete: "new-password",
       msgError: showErrorsMsg(formik.touched.password, formik.errors.password),
     },
     {
@@ -92,6 +95,7 @@ export const ShowForm = ({ formData, setFormData }) => {
         formik.touched.passwordConfirmation
       ),
       value: formik.values.passwordConfirmation,
+      autoComplete: "new-password",
       msgError: showErrorsMsg(
         formik.touched.passwordConfirmation,
         formik.errors.passwordConfirmation
@@ -119,6 +123,7 @@ export const ShowForm = ({ formData, setFormData }) => {
                   formik.setFieldTouched(item.name);
                   formik.handleChange(e);
                 }}
+                autoComplete={item.autoComplete}
                 msgError={item.msgError}
               />
             );

@@ -7,6 +7,7 @@ export const InputField = ({
   borderError,
   values,
   onChangeFn,
+  autoComplete,
   msgError,
 }) => {
   return (
@@ -21,6 +22,7 @@ export const InputField = ({
         }
         value={values}
         onChange={onChangeFn}
+        autoComplete={autoComplete}
         required
       />
       {msgError}
