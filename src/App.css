@@ -3,15 +3,5 @@
   margin: 0 auto;
   padding: 2rem;
   display: flex;
-  align-items: center;
   flex-direction: column;
-}
-
-.container {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  gap: 20rem;
-  align-items: baseline;
-  padding-top: 3rem;
 }

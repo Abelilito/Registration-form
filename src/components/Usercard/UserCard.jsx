@@ -4,13 +4,23 @@ export const UserCard = ({ formData }) => {
   if (formData.length > 0) {
     return (
       <div>
-        <h3 className={s.mtNone}>Liste d'inscription</h3>
         <div className={s.container}>
           {formData.map((formData, index) => (
-            <div key={index}>
-              <div>Nom : {formData.name}</div>
-              <div>Age : {formData.age}</div>
-              <div>Email : {formData.email}</div>
+            <div key={index} className="text-sm">
+              <div>
+                <span className="text-[#262626] font-bold">Nom : </span>
+                {formData.name}
+              </div>
+
+              <div>
+                <span className="text-[#262626] font-bold"> Age : </span>
+                {formData.age}
+              </div>
+
+              <div>
+                <span className="text-[#262626] font-bold">E-mail : </span>
+                {formData.email}
+              </div>
             </div>
           ))}
         </div>

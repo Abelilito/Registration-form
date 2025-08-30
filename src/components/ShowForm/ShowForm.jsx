@@ -4,6 +4,7 @@ import YupPassword from "yup-password";
 YupPassword(Yup);
 import s from "./style.module.css";
 import { InputField } from "../InputField/InputField";
+import { CustomButton } from "../CustomButton/CustomButton";
 
 export const ShowForm = ({ formData, setFormData }) => {
   const signupSchema = Yup.object().shape({
@@ -101,7 +102,10 @@ export const ShowForm = ({ formData, setFormData }) => {
   return (
     <>
       <Formik>
-        <form onSubmit={formik.handleSubmit}>
+        <form
+          className="flex flex-col gap-4 w-full sm:w-80"
+          onSubmit={formik.handleSubmit}
+        >
           {formItems.map((item, index) => {
             return (
               <InputField
@@ -119,17 +123,19 @@ export const ShowForm = ({ formData, setFormData }) => {
               />
             );
           })}
-
-          <button type="submit" disabled={!formik.isValid || !formik.dirty}>
-            Liste d'inscription
-          </button>
+          <CustomButton formik={formik} />
         </form>
       </Formik>
     </>
   );
 
   function handleSubmit(values) {
-    setFormData([...formData, values]);
+    let newItem = {
+      name: values.name,
+      age: convertDate(values.birthdate),
+      email: values.email,
+    };
+    setFormData([...formData, newItem]);
     formik.resetForm();
   }
 
@@ -144,7 +150,7 @@ export const ShowForm = ({ formData, setFormData }) => {
   function showErrorsMsg(field, errors) {
     {
       return field && errors ? (
-        <div className={s.errorMessage}>{errors}</div>
+        <div className="text-[#991b1b] text-[10px]">{errors}</div>
       ) : null;
     }
   }
@@ -152,9 +158,9 @@ export const ShowForm = ({ formData, setFormData }) => {
   function borderError(isErrors, touched) {
     {
       if (touched && isErrors) {
-        return `${s.borderError}`;
-      } else if (touched && !isErrors) {
-        return `${s.borderValid}`;
+        return "border-[#991b1b]";
+      } else {
+        return "border-[#737373]";
       }
     }
   }
