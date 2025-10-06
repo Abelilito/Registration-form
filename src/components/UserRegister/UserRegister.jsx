@@ -7,7 +7,7 @@ export const UserRegister = () => {
   const [formData, setFormData] = useState([]);
 
   return (
-    <div className="px-8 sm:px-24">
+    <div className="px-8 sm:px-24 mt-[4rem]">
       <h1 className="text-3xl mb-20 md:mb-24 font-bold text-center text-[#262626]">
         Formulaire d'inscription
       </h1>
