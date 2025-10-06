@@ -1,7 +1,8 @@
-C'est un petit projet en React sur la création d'un formulaire d'inscription.
+This is a small React project for creating a registration form.
 
-J'utilise :
+## Tools used :
 
-- Formik pour la création du formulaire.
-- Yup pour l'analyse et la validation des champs à l'exécution.
-- Tailwind pour le style et la responsive.
+- This project was built using React.
+- Formik for creating the form.
+- Yup for analyzing and validating fields at runtime.
+- Tailwind for styling and responsiveness.
