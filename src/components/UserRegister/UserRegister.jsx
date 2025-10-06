@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { UserCard } from "../Usercard/UserCard";
 import { ShowForm } from "../ShowForm/ShowForm";
+import "../../App.css";
 
 export const UserRegister = () => {
   const [formData, setFormData] = useState([]);
